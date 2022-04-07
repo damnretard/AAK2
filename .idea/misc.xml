@@ -4,6 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../layout/custom_preview.xml" value="0.38385416666666666" />
+        <entry key="app/src/main/res/drawable/ic_11a.xml" value="0.2645" />
+        <entry key="app/src/main/res/drawable/ic_12a.xml" value="0.2645" />
+        <entry key="app/src/main/res/drawable/ic_2a.xml" value="0.2645" />
+        <entry key="app/src/main/res/drawable/ic_3a.xml" value="0.2645" />
+        <entry key="app/src/main/res/drawable/ic_4a.xml" value="0.2645" />
+        <entry key="app/src/main/res/drawable/ic_4evr.xml" value="0.2645" />
+        <entry key="app/src/main/res/drawable/ic_5a.xml" value="0.2645" />
+        <entry key="app/src/main/res/drawable/ic_6a.xml" value="0.2645" />
+        <entry key="app/src/main/res/drawable/ic_7a.xml" value="0.2645" />
+        <entry key="app/src/main/res/drawable/ic_8a.xml" value="0.2645" />
+        <entry key="app/src/main/res/drawable/ic_9a.xml" value="0.2645" />
+        <entry key="app/src/main/res/drawable/ic_baseline_opacity_24.xml" value="0.2645" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/memory_card.xml" value="0.35572916666666665" />
       </map>

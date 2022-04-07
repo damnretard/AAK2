@@ -1,23 +1,30 @@
 package com.example.mymemory
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mymemory.models.BoardSize
 
 
-
-class MemoryBoardAdaptor(private val context: Context, private val numPieces: Int) :
+class MemoryBoardAdaptor(
+    private val context: Context,
+    private val boardSize: BoardSize,
+    private val cardImages: List<Int>
+) :
     RecyclerView.Adapter<MemoryBoardAdaptor.ViewHolder>() {
 
     companion object {
         private const val MARGIN_SIZE = 10
+        private const val TAG = "MemoryBoardAdapter"
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val cardWidth = parent.width / 2 - (2 * MARGIN_SIZE)
-        val cardHeight = parent.height / 4 - (2 * MARGIN_SIZE)
+        val cardWidth = parent.width / boardSize.getWidth() - (2 * MARGIN_SIZE)
+        val cardHeight = parent.height / boardSize.getHeight() - (2 * MARGIN_SIZE)
         val cardSideLength = kotlin.math.min(cardWidth, cardHeight)
         val view = LayoutInflater.from(context).inflate(R.layout.memory_card, parent, false)
         val layoutParams = view.findViewById<CardView>(R.id.cardView).layoutParams as ViewGroup.MarginLayoutParams
@@ -33,11 +40,16 @@ class MemoryBoardAdaptor(private val context: Context, private val numPieces: In
         holder.bind(position)
     }
 
-    override fun getItemCount() = numPieces
+    override fun getItemCount() = boardSize.numCards
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val imageButton = itemView.findViewById<ImageButton>(R.id.imageButton)
+
         fun bind(position: Int) {
-            // No-op
+            imageButton.setImageResource(cardImages[position])
+            imageButton.setOnClickListener {
+                Log.i(TAG, "Clicked on position $position")
+            }
 
         }
     }
